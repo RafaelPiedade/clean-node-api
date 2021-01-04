@@ -13,9 +13,7 @@ describe('Login Router', () => {
     expect(httpResponse.statusCode).toBe(400)// toBe compara ponteiros
     expect(httpResponse.body).toEqual(new MissingParamError('email'))// toEqual just object
   })
-})
 
-describe('Login Router', () => {
   test('Should return 400 if no password is provided', () => {
     const sut = new LoginRouter()
     const httpRequest = {
@@ -27,18 +25,14 @@ describe('Login Router', () => {
     expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse.body).toEqual(new MissingParamError('password'))
   })
-})
 
-describe('Login Router', () => {
   test('Should return 500 if no httpRequest is provided', () => {
     const sut = new LoginRouter()
 
     const httpResponse = sut.route()
     expect(httpResponse.statusCode).toBe(500)
   })
-})
 
-describe('Login Router', () => {
   test('Should return 500 if no httpRequest has no body', () => {
     const sut = new LoginRouter()
     const httpResponse = sut.route({})
